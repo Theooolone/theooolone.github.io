@@ -1,0 +1,128 @@
+body {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 12.5vw 75vw 12.5vw;
+	grid-template-rows: auto auto auto 128px;
+	background-image: linear-gradient(to right, #181820, #101018, #101018, #101018, #181820);
+	background-color: #181820;
+	color: white;
+}
+
+.page-menu, .page-header, .page-footer {
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+
+.page-content {
+	grid-column-start: 2;
+	grid-column-end: -2;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 24px;
+	height: 800px;
+}
+
+.page-footer {
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.page-menu {
+	padding: 8px;
+}
+
+
+/*light beam animation*/
+
+@keyframes beams {
+	from {width: 0vw;}
+	to {width: 95vw;}
+}
+@keyframes beamstransparency {
+	from {opacity: 0;}
+	70% {opacity: 0.05;}
+	to {opacity: 0;}
+}
+
+.beams {
+	left: 50%;
+	transform: translateX(-50%);
+	position: fixed;
+	height: 100vh;
+	z-index: -128;
+
+	animation-name: beams;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+.light-beam {
+	position: fixed;
+	height: 100%;
+	width: 0.75%;
+	background-color: #fff;
+	opacity: 0;
+	animation-name: beamstransparency;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+.lbr {
+	right: 0px;
+}
+
+.b2 {
+	animation-delay: 2s;
+}
+
+.page-header {
+	text-shadow: 0px 0px 6px #7fbfff, 8px 12px 16px #000;
+	text-align: center;
+	font-family: 'Chango';
+	font-size: 96px;
+}
+.page-menu {
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	column-gap: 6.25%;
+	margin: 24px 6.25% 64px;
+	padding: 0;
+}
+
+.menu-button {
+	width: 100%;
+	text-align: center;
+	font-family: 'Secular One', sans-serif;
+	font-size: 32px;
+	border-radius: 8px;
+	border: 0;
+	background-color: #606060;
+	color: #fff;
+	box-shadow: 4px 8px 12px #000;
+	transition: box-shadow 0.6s, rotate 0.6s;
+	top:8px;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
+
+.menu-button:hover {
+	box-shadow: 0px 0px 2px 5px #fff, 4px 8px 12px #000;
+	rotate: -2deg;
+}
+
+
+.page-footer p {
+	text-align: center;
+	transform: translate(0, 50%);
+	font-family: 'Secular One', sans-serif;
+	font-size: 24px;
+	color: rgba(223, 223, 255, 0.25);
+}
+
+/*
+.gradient-picker-button {
+	background-color: #7fbfff;
+	background-image: linear-gradient(#7fbfff, #bfdfff);
+	color: #40607f;
+}*/
