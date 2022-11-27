@@ -1,0 +1,70 @@
+body {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 12.5vw 75vw 12.5vw;
+	grid-template-rows: auto auto auto 128px;
+	background-image: linear-gradient(to right, #181820, #101018, #101018, #101018, #181820);
+	background-color: #181820;
+	color: white;
+}
+
+.page-menu, .page-header, .page-footer {
+	grid-column-start: 1;
+	grid-column-end: -1;
+}
+
+.page-content {
+	grid-column-start: 2;
+	grid-column-end: -2;
+}
+
+.page-footer {
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.page-menu {
+	padding: 8px;
+}
+
+
+/*light beam animation*/
+
+@keyframes beams {
+	from {width: 95vw;}
+	to {width: 0;}
+}
+@keyframes beamstransparency {
+	from {opacity: 0;}
+	30% {opacity: 0.05;}
+	to {opacity: 0;}
+}
+
+.beams {
+	left: 50%;
+	transform: translateX(-50%);
+	position: fixed;
+	height: 100vh;
+	z-index: -128;
+
+	animation-name: beams;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+.light-beam {
+	position: fixed;
+	height: 100%;
+	width: 0.75%;
+	background-color: #fff;
+	opacity: 0;
+	animation-name: beamstransparency;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+.lbr {
+	right: 0px;
+}
+
+.b2 {
+	animation-delay: 2s;
+}
